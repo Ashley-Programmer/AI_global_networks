@@ -11,19 +11,34 @@
 
   <body>
     <section class="bg-particles" id="particles" aria-hidden="true"></section>
-    <header class="header">
-      <img src="" alt="AI Global Networks Logo" class="header-logo" />
-      <h1 class="logo">AI Global Networks</h1>
-      <nav class="header-nav">
-        <ul>
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="#signup" class="cta-button" id="signup">Sign Up</a>
-    </header>
+
+    <nav class="navbar sticky-top bg-body-tertiary">
+      <div class="container-fluid">
+        <img src="./images/logo.png" alt="AI Global Networks Logo" class="navbar-brand header-logo" />
+        <h3 class="logo navbar-brand">AI Global Networks</h3>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="signup">
+            <button class="btn btn-outline-success" type="submit">Sign Up</button>
+          </form>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
     <main class="main-content">
       <!-- Hero section -->
