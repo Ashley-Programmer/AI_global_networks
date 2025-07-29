@@ -10,7 +10,7 @@
     --secondary-color: #FF6200; /* Deeper orange */
     --accent-color: #FFFFFF; /* White */
     --gradient-primary: linear-gradient(135deg, #F28C38 0%, #FF6200 100%);
-    --bg-dark: #000000e8; /* Black background */
+    --bg-dark: #000000d8; /* Black background with slight opacity */
     --text-primary: #FFFFFF; /* White text */
     --text-secondary: #E0E0E0; /* Light gray for secondary text */
     --text-muted: #B0B0B0; /* Muted gray */
@@ -32,7 +32,7 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 60px; /* Adjust for fixed navbar height */
 }
 
 /* Animated particle background */
@@ -151,7 +151,7 @@ body {
 
 /* Hero section */
 .hero-section {
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,9 +265,8 @@ body {
     box-shadow: 0 8px 24px rgba(216, 86, 5, 0);
 }
 
-/* Form section */
+/* Form section - Updated for Bootstrap with Validation */
 .form {
-    padding: 6rem 2rem;
     background: var(--bg-dark);
 }
 
@@ -279,69 +278,86 @@ body {
     margin-bottom: 3rem;
 }
 
-.form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+.form .form-label {
     color: var(--text-primary);
+    font-weight: 500;
 }
 
-.form-input {
-    width: 100%;
-    padding: 0.8rem;
+.form .form-control,
+.form .form-select {
     background: var(--bg-dark);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--text-primary);
-    font-size: 1rem;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.form-input::placeholder {
-    color: var(--text-muted);
-}
-
-.submit-btn {
-    width: 100%;
     padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+option {
+    color: var(--bg-dark);
+}
+
+.form .form-control:focus,
+.form .form-select:focus {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(242, 140, 56, 0.3);
+    outline: none;
+}
+
+.form .form-control::placeholder,
+.form .form-select::placeholder {
+    color: var(--text-primary);
+}
+
+.form .form-check-input {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.form-check-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.form .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.form .form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(242, 140, 56, 0.3);
+    color: var(--accent-color);
+}
+
+.form .btn-primary {
     background: var(--primary-color);
     border: none;
     border-radius: 8px;
-    color: var(--bg-dark);
-    font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
+    padding: 0.8rem;
     transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
+.form .btn-primary:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
 }
 
-.privacy-note {
-    color: var(--text-muted);
+.form .valid-feedback {
+    color: var(--text-primary);
+}
+
+.form .invalid-feedback {
+    color: #ff4d4f; /* Red for error to stand out */
+}
+
+.form .privacy-note {
     font-size: 0.85rem;
-    text-align: center;
-    display: block;
+    color: var(--accent-color);
 }
 
 /* Footer */
@@ -393,7 +409,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 60px; /* Adjust for smaller navbar height on mobile */
+        padding-top: 60px;
     }
 
     .hero-section {
@@ -432,9 +448,5 @@ body {
     
     .form {
         padding: 4rem 1rem;
-    }
-    
-    .form-container {
-        padding: 1.5rem;
     }
 }
