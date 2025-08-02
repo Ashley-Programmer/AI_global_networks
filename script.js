@@ -9,7 +9,10 @@ const loadCountryAPI = async () => {
     regionSelect.innerHTML = '<option selected disabled value="">Choose...</option>';
 
     try {
-        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,region', {
+        // fetching countries from the Rest countries API website
+        // https://restcountries.com/v3.1/region/europe
+        // https://restcountries.com/v3.1/region/{region}
+        const response = await fetch('https://restcountries.com/v3.1/region/{region}', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -29,6 +32,7 @@ const loadCountryAPI = async () => {
 
         // Populate dropdown using displayCountries
         displayCountries(regions);
+        
     } catch (error) {
         console.error('Error fetching regions:', error);
         // Fallback regions
@@ -56,4 +60,5 @@ const getCountry = region => {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, running loadCountryAPI');
     loadCountryAPI();
+    
 });
