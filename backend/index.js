@@ -17,7 +17,7 @@ app.post('/send-confirmation', async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: 'no-reply@aigolbalnetworks.co.za',
+      from: 'info@aiglobalnetworks.co.za',
       to: email,
       subject: 'Form Submitted Successfully!',
       html: `<p>Hi ${name},</p><p>Thank you for your submission.</p>`

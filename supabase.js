@@ -20,11 +20,11 @@ document.querySelector('form').addEventListener('submit', async (e) => {
   if (error) { console.error(error); alert('Error submitting form'); return; }
 
   // Call backend to send email
-  await fetch('http://localhost:3000/send-confirmation', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: formData.email, name: formData.first_name })
-  });
+  // await fetch('http://localhost:3000/send-confirmation', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({ email: formData.email, name: formData.first_name })
+  // });
 
   alert('Form submitted successfully!');
   e.target.reset();
